@@ -3,12 +3,46 @@
  */
 package kuis3_ppbo25_1124006_joshsatrionachemya;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.util.ArrayList;
+import java.util.List;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+public class App {
+
+    public static void main(String[] args) throws InvalidInputException, EmptyListException {
+        StatisticList<Integer> StatisticList = new StatisticList<>();
+        CLIUtil util = new CLIUtil();
+        int inputMenu = 5;
+        StatisticList.add(1);
+        StatisticList.add(2);
+        StatisticList.add(3);
+        StatisticList.add(4);
+        StatisticList.add(5);
+
+
+        while (inputMenu != 7) {
+            System.out.println("Menu Utama");
+            System.out.println("1. Tambah Angka");
+            System.out.println("2. Tampilkan Rata Rata");
+            System.out.println("3. Tampilkan Nilai Maksimum");
+            System.out.println("4. Tampilkan Nilai Minimum");
+            System.out.println("5. Tampilkan Median");
+            System.out.println("6. Tampilkan Daftar(Sorted)");
+            System.out.println("7. Exit");
+            inputMenu = util.nextInt();
+
+            switch (inputMenu) {
+                case 1:
+                    System.out.println("Angka brp :");
+                    int angka = util.getNumber();
+                    StatisticList.add(angka);
+                    util.nextLine();
+                    break;
+                case 2:
+                    System.out.println(StatisticList.getAverage());
+                    break;
+                case 3:
+            }
+        }
+
     }
 }
